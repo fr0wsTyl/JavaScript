@@ -1,0 +1,48 @@
+html,
+body,
+div {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Lucida Console';
+  font-size: 13px;
+  color: #f0f0f0;
+}
+body #js-console {
+  color: #fff;
+  width: 670px;
+  height: 340px;
+  background: #000000 url('../images/top-bg.png') no-repeat 0 0;
+  padding: 31px 0 0 0;
+  border-left: 10px solid #f08f69;
+  border-right: 10px solid #f08f69;
+  border-bottom: 10px solid #f08f69;
+  margin: 10% auto;
+}
+body #js-console #scroll {
+  overflow-y: scroll;
+  max-height: 340px;
+}
+body #js-console #scroll #console-content {
+  margin: -20px 0 0 0;
+}
+body #js-console #scroll #code {
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  padding-left: 5px;
+}
+body #js-console #scroll #check {
+  border: 1px solid #fff;
+  background-color: #000;
+  border-radius: 5px;
+  color: #fff;
+}
+body #js-console #scroll #result {
+  color: #ccc;
+  font-size: 2em;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

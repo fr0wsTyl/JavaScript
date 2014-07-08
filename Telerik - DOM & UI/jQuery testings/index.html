@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Testing jQuery</title>
+</head>
+<body>
+
+	<span id="text">Heree is some text to zoom!</span>
+
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/my-script.js"></script>
+	<script type="text/javascript">
+		$('#text').zoom().fadeOut(1000);
+	</script>
+</body>
+</html>

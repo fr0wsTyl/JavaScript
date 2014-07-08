@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Canvas ex2</title>
+    <style>
+        #canvas {
+            border: 1px solid #000;
+            margin: 20px;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var w = canvas.width;
+        var h = canvas.height;
+        var x = 0;
+        var y = 0;
+        var r = 10;
+        var x1 = 80;
+        var y1 = 5;
+        var r1 = 10;
+        var xSpeed = 10;
+        var ySpeed = 10;
+        var r2 = r * 2;
+        function DrawFullCircle(xa, ya, ra) {
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(xa, ya, ra, 0, 2 * Math.PI);
+            ctx.lineWidth = 1;
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+        }
+        function moveBall() {
+            ctx.clearRect(0, 0, w, h);
+            if ((x + r2)>= w) {
+                xSpeed -= 2;
+            }
+            if ((x + r2)<= 0) {
+                xSpeed += 2;
+            }
+            if ((y + r2) >= h) {
+                ySpeed -= 2;
+            }
+            if ((y + r2)<= 0) {
+                ySpeed += 2;
+            }
+            if ((x1 + r2)>= w) {
+                xSpeed -= 2;
+            }
+            if ((x1 + r2)<= 0) {
+                xSpeed += 2;
+            }
+            if ((y1 + r2)>= h) {
+                ySpeed -= 2;
+            }
+            if ((y1 + r2) <= 0) {
+                ySpeed += 2;
+            }
+            x += xSpeed;
+            y += ySpeed;
+            x1 += xSpeed;
+            y1 += ySpeed;
+            var circle1 = new DrawFullCircle(x, y, r);
+            var circle2 = new DrawFullCircle(x1, y1, r1);
+            requestAnimationFrame(moveBall);
+        }
+
+        moveBall();
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MyConsole</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="js-console">
+        <div id="console-content">
+            <div id="scroll">
+                <p id="copyright">JSConsole [Version 1.0]
+                    <br />(c) 2014 Alex. All rights reserved. [OPEN SOURCE CONSOLE]</p>
+                <p id="condition"></p>
+                <form>
+                    <textarea class="code" name="textField" placeholder="Enter some text" rows="4" cols="50"></textarea>
+                    <br/>
+                    <input type="text" class="code" name="word" placeholder="Enter a word to search for" />
+                    <input type="checkbox" name="sensitive" value="off">Case Sensitive
+                    <br>
+                    <input type="submit" class="check" Value="Run" onClick="func(this.form.textField.value, this.form.word.value, this.form.sensitive.checked)">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="scripts/js-console.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery homework</title>
+</head>
+
+<body>
+
+    <div id="just-div">Just div element..</div>
+    <br />
+    <br />
+    <input type="text" id="text-to-insert" placeholder="Add text to insert">
+    <br />
+    <button id="insert-before">Insert before</button>
+    <br />
+    <button id="insert-after">Insert after</button>
+
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript">
+    var $justDiv = $('#just-div');
+
+    function insertBeforeElement() {
+        $('#text-to-insert').insertBefore($justDiv);
+    }
+
+    function insertAfterElement() {
+       $('#text-to-insert').insertAfter($justDiv);
+    }
+    $('#insert-before').on('click', insertBeforeElement);
+    $('#insert-after').on('click', insertAfterElement);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>DOM & UI Homework</title>
+    <!-- Default styles -->
+    <style type="text/css" rel="stylesheet">
+    #divs {
+        background-color: #ccc;
+        margin: 5px;
+        display: inline-block;
+    }
+    #divs:nth-of-type(2n) {
+        background-color: #371265;
+    }
+    </style>
+</head>
+<!-- Example HTML - form for user and button for creating divs -->
+<body>
+    <div id="wrapper">
+        <h1>Creating divs</h1>
+        <label for="value">Enter Number of DIVS</label>
+        <input type="text" id="value" />
+        <button id="create" onclick="createDivs()">Create DIVS</button>
+        <!-- Empty div for appending new divs -->
+        <div id="div">
+
+        </div>
+    </div>
+    <!-- Source to JS file -->
+    <script type="text/javascript" src="scripts/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Testing with kendoUI</title>
+
+</head>
+
+<body>
+    <ul id="auto-complete">
+    	<li>NewItem</li>
+    	<li>NewItem</li>
+    	<li>NewItem</li>
+    	<li>NewItem
+			<ul>
+				<li>Dropdown LI</li>
+				<li>DROPP..</li>
+			</ul>
+    	</li>
+    	<li>NewItem</li>
+    </ul>
+	
+    <script type="text/javascript" src="kendoUI/js/jquery.min.js"></script>
+    <script type="text/javascript" src="kendoUI/js/kendo.web.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#auto-complete').kendoMenu();
+    });
+    </script>
+</body>
+</html>

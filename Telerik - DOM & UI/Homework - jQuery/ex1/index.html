@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Homework</title>
+    <style type="text/css">
+    #slider {
+        width: 600px;
+        height: 200px;
+        border: 1px solid #000;
+        border-radius: 20px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    #slider img {
+        display: none;
+    }
+    </style>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script src="bower_components/jquery/dist/jquery-ui.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="slider">
+        <img id="1" src="images/slide1.jpg">
+        <img id="2" src="images/slide2.jpg">
+        <img id="3" src="images/slide3.jpg">
+        <img id="4" src="images/slide4.jpg">
+    </div>
+
+
+    <script type="text/javascript">
+    function slider() {
+        $('#1').show('fade', 1500, function() {
+            $(this).hide('fade', 500);
+            $('#2').show('fade', 1500, function() {
+                $(this).hide('fade', 500);
+                $('#3').show('fade', 1500, function() {
+                    $(this).hide('fade', 500);
+                    $('#4').show('fade')
+                    slider();
+                })
+            });
+        });
+    }
+    slider();
+    </script>
+</body>
+
+</html>

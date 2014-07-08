@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery plugins homework</title>
+</head>
+<body>
+    <select id="dropdown">
+        <option value="1" selected="selected">One</option>
+        <option value="2">Two</option>
+    </select>
+
+
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript">
+    (function($) {
+        $('#dropdown').dropdown();
+    })(jQuery);
+    </script>
+</body>
+
+</html>

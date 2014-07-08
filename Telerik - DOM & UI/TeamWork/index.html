@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Team Project</title>
+    <script src="scripts/kinetic.min.js" type="text/javascript"></script>
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+
+	<!-- GitHub Repository: https://github.com/fr0wsTyl/JSTeamProject/ -->
+    <h1>Team 'Jerry Mouse' presents... </h1>
+    <h2>' Guess the rect! '</h2>
+    <div id="game-container"></div>
+    <script type="text/javascript">
+        function play() {
+            var stage = new Kinetic.Stage({
+                container: 'game-container',
+                width: 800,
+                height: 600
+            });
+            var layer = new Kinetic.Layer();
+            var level = 0;
+            stage.add(layer);
+            var level = 0;
+            var currentCups = 3;
+            var txt = new Kinetic.Text({
+                x: 100,
+                y: 300,
+                text: '',
+                fontSize: 20,
+                fill: 'darkgreen'
+            });
+            layer.add(txt);
+            stage.add(layer);
+            function Rect(cx, cy) {
+                var cup = new Kinetic.Rect({
+                    x: cx,
+                    y: cy,
+                    width: 40,
+                    height: 40,
+                    fill: 'black'
+                });
+                layer.add(cup);
+                stage.add(layer);
+                cup.on("click", function () {
+                    var amplitude = 30;
+                    var period = 1000;
+                    var centerY = 143;
+                    var anim = new Kinetic.Animation(function (frame) {
+                        cup.setY(amplitude * Math.sin(frame.time * 2 * Math.PI / period) + centerY);
+                    }, layer);
+
+                    anim.start();
+                    var selectedIndex = (cx - (5 + 100) + 100) / 100
+                    var random = Math.floor(Math.random() * (level + 3));
+                    if ((selectedIndex === random) && (level < 5)) {
+                        setTimeout(function () {
+                            anim.stop();
+                            cups.push(new Rect((5 + (level + 3) * 100), 150));
+                        }, 1050);
+                        level++;
+                        levels.setText('Level: ' + level);
+                        currentCups++;
+                        numberOfCups.setText('Rects: ' + currentCups);
+                        txt.setText('Congratulations! You guessed the rect and pass to the next level: ' + (level + 1));
+                    }
+                    else {
+                        if (level < 5) {
+                            setTimeout(function () {
+                                anim.stop();
+                            }, 1050);
+                        }
+
+                        var misty = new Kinetic.Rect({
+                            x: 0,
+                            y: 100,
+                            width: 800,
+                            height: 120,
+                            fill: 'black'
+                        });
+                        var gameOverText = new Kinetic.Text({
+                            x: 230,
+                            y: 150,
+                            text: 'GAME OVER!',
+                            fontSize: 50,
+                            fill: 'white'
+                        });
+                        var yes = new Kinetic.Text({
+                            x: 570,
+                            y: 300,
+                            text: ' YES',
+                            fontSize: 20,
+                            fill: 'darkgreen'
+                        });
+                        var no = new Kinetic.Text({
+                            x: 630,
+                            y: 300,
+                            text: ' NO',
+                            fontSize: 20,
+                            fill: 'darkgreen'
+                        });
+                        layer.add(misty);
+                        layer.add(gameOverText);
+                        layer.add(yes);
+                        layer.add(no);
+                        stage.add(layer);
+                        txt.setText('Ups! The ball is in rect ' + (random + 1) + '! ' + 'Do you wanna play AGAIN?');
+                        yes.addEventListener('click', function () {
+                            play();
+                        }, false)
+                        no.addEventListener('click', function () {
+                            txt.setText('OKAY, GOODBYE!');
+                            no.setText(' ');
+                            yes.setText(' ');
+                        }, false);
+                    }
+                    if (level == 3) {
+                        var misty = new Kinetic.Rect({
+                            x: 0,
+                            y: 100,
+                            width: 800,
+                            height: 120,
+                            fill: 'black'
+                        });
+                        var youWin = new Kinetic.Text({
+                            x: 250,
+                            y: 140,
+                            text: 'YOU WIN!',
+                            fontSize: 50,
+                            fill: 'white'
+                        });
+                        layer.add(misty);
+                        layer.add(youWin);
+                    }
+                });
+                console.log(level);
+            }
+            var levels = new Kinetic.Text({
+                x: 10,
+                y: 10,
+                text: 'Level: ' + level,
+                fill: 'darkgreen',
+                fontSize: 30
+            });
+            var numberOfCups = new Kinetic.Text({
+                x: 680,
+                y: 10,
+                text: 'Rects: ' + currentCups,
+                fill: 'darkgreen',
+                fontSize: 30
+            });
+            layer.add(numberOfCups);
+            layer.add(levels);
+            var cups = [];
+            for (var i = 1; i < level + 4; i++) {
+                cups.push(Rect((5 + i * 100), 150));
+            }
+        }
+        play();
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Color Changer</title>
+	<style type="text/css">
+		button {
+			border: 2px solid #eee;
+			border-radius: 5px;
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<textarea id="textarea"></textarea><br />
+	<input type="color" id="textarea-color" />
+	<button onclick="textareaChange();">Change textarea color..</button><br />
+	<input type="color" id="color2"/>
+	<button onclick="changeBackground()">Change background color</button>
+	<script type="text/javascript">
+		function textareaChange () {
+			var color1 = document.getElementById('textarea-color').value;
+			var textarea = document.getElementById('textarea');
+			textarea.style.color = color1;
+		}
+		function changeBackground () {
+			var color2 = document.getElementById('color2').value;
+			document.body.style.backgroundColor = color2;
+			console.log(color2);
+		}
+
+	</script>
+</body>
+</html>

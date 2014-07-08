@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Select all div nodes</title>
+</head>
+<body>
+	<div>lorem ipsum dolor ...
+		<div>
+			Trala-lala
+			<div>
+				Pesho e otvutre
+				<div>
+					samo oshte edin..
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function getWithQuerySelector () {
+			var divs = document.querySelectorAll('div > div');
+			console.log(divs);
+		}
+		function getWithDocument () {
+			var divs = document.getElementsByTagName('div');
+			for (var i = 0; i < divs.length; i++) {
+				var arr = [];
+				console.log(divs[i]);
+				var next = divs[i].nextElementSibling;
+				if (next === HTMLDivElement) {
+					arr.push[next];
+				};
+				return arr;
+			};
+		}
+		getWithQuerySelector();
+		getWithDocument();
+	</script>
+</body>
+</html>

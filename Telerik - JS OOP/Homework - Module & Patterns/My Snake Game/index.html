@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Game</title>
+    <style>
+    #game-container {
+        border: 3px solid #000;
+    }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="game-container" width="600" height="600"></canvas>
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+    var canvas = document.getElementById('game-container');
+    var ctx = canvas.getContext('2d');
+
+    var x = 100;
+    var y = 100;
+    var w = 20;
+    var h = 20;
+    var up = false;
+    var right = false;
+    var bottom = false;
+    var left = true;
+	document.addEventListener('keydown',function (ev) {
+		var keyCode = ev.keyCode;
+		if (keyCode == 38) {
+			left = false;
+			right = false;
+			bottom = false
+			up = true;
+		}
+		else if(keyCode == 39) {
+			up = false;
+			left = false;
+			bottom = false;
+			right = true;
+		}
+		else if (keyCode == 40) {
+			up = false;
+			left = false;
+			right = false;
+			bottom = true;
+		}
+		else if (keyCode == 37) {
+			up = false;
+			right = false;
+			bottom = false;
+			left = true;
+		};
+	})
+    function anim() {
+    	ctx.clearRect(0,0,canvas.width,canvas.height)
+    	if (up) {
+    		y-=2;
+    	}
+    	else if (right) {
+    		x+=2;
+    	}
+    	else if (bottom) {
+    		y+=2;
+    	}
+    	else if(left) {
+    		x-=2;
+    	};
+    	if (y >= canvas.height) {
+    		y = 0;
+    		y+=2;
+    	}
+    	else if(y <= canvas.style.top) {
+    		y=canvas.height;
+    		y-=2;
+    	}
+    	else if (x >= canvas.width) {
+    		x = 0;
+    		x+=2;
+    	}
+    	else if (x <= canvas.style.width) {
+    		x=canvas.width;
+    	};
+        ctx.fillRect(x, y, w, h);
+    }
+    setInterval(anim, 1)
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework Handlebars</title>
+	<style>
+		table {
+			width: 600px;
+			height: 500px;
+		}
+	</style>
+</head>
+<body>
+
+	<script id="template" type="text/x-handlebars-templates">
+		<table>
+			<thead>
+				<th>{{number}}</th>
+				<th>{{title}}</th>
+				{{#each date}}
+					<th>{{this.dt}} {{@index}}</th>
+				{{/each}}
+			</thead>
+			<tbody>
+				{{#each td}}
+					<tr>
+						<td>{{@index}}</td>
+						<td>{{content}}</td>
+						<td>{{date1}}</td>
+						<td>{{date2}}</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</script>
+	<script type="text/javascript" src="scripts/handlebars.js"></script>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script>
+		var html = $('#template').html();
+		var template = Handlebars.compile(html);
+		var obj = {
+			number: 'N',
+			title: 'Title',
+			date: [{
+				dt: 'Date #'
+			}, {
+				dt: 'Date #'
+			}],
+			td: [{
+				content: 'Course Introduction',
+				date1: 'Wed 18:00 28 May 2014',
+				date2: 'Wed 18:00 28 May 2014'
+			},{
+				content: 'Course Introduction',
+				date1: 'Wed 18:00 28 May 2014',
+				date2: 'Wed 18:00 28 May 2014'
+			},{
+				content: 'Course Introduction',
+				date1: 'Wed 18:00 28 May 2014',
+				date2: 'Wed 18:00 28 May 2014'
+			},{
+				content: 'Course Introduction',
+				date1: 'Wed 18:00 28 May 2014',
+				date2: 'Wed 18:00 28 May 2014'
+			},{
+				content: 'Course Introduction',
+				date1: 'Wed 18:00 28 May 2014',
+				date2: 'Wed 18:00 28 May 2014'
+			},{
+				content: 'Course Introduction',
+				date1: 'Wed 18:00 28 May 2014',
+				date2: 'Wed 18:00 28 May 2014'
+			},{
+				content: 'Course Introduction',
+				date1: 'Wed 18:00 28 May 2014',
+				date2: 'Wed 18:00 28 May 2014'
+			},{
+				content: 'Course Introduction',
+				date1: 'Wed 18:00 28 May 2014',
+				date2: 'Wed 18:00 28 May 2014'
+			},{
+				content: 'Course Introduction',
+				date1: 'Wed 18:00 28 May 2014',
+				date2: 'Wed 18:00 28 May 2014'
+			},{
+				content: 'Course Introduction',
+				date1: 'Wed 18:00 28 May 2014',
+				date2: 'Wed 18:00 28 May 2014'
+			}]
+		}
+
+		$(document.body).append(template(obj))
+	</script>
+</body>
+</html>

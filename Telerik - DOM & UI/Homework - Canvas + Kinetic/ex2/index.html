@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v5.0.2.min.js"></script>
+    <script>
+        var familyMembers = [{
+            mother: 'Maria Petrova',
+            father: 'Georgi Petrov',
+            children: ['Teodora Petrova', 'Peter Petrov']
+        }, {
+            mother: 'Petra Stamatova',
+            father: 'Todor Stamatov',
+            children: ['Maria Petrova']
+        }]
+
+        var stage = new Kinetic.Stage({
+            container: 'container',
+            width: 1000,
+            height: 800
+        });
+        var layer = new Kinetic.Layer();
+        function Person(x, y, name) {
+            var rect = new Kinetic.Rect({
+                stroke: '#8DC422',
+                x: x,
+                y: y,
+                width: 150,
+                height: 50,
+                closed: true
+            });
+            var simpleText = new Kinetic.Text({
+                x: x + 20,
+                y: y + 15,
+                text: name,
+                fontSize: 18,
+                fontFamily: 'Calibri',
+                fill: '#000'
+            });
+            layer.add(rect);
+            layer.add(simpleText);
+            stage.add(layer);
+        }
+        var line = new Kinetic.Line({
+            points: [480, 80, 550, 198, 630, 80],
+            stroke: '#8DC422',
+            strokeWidth: 5,
+            lineCap: 'round',
+            lineJoin: 'round',
+            tension: 0.7
+        });
+        var line2 = new Kinetic.Line({
+            points: [260, 253, 320, 398, 550, 252, 560, 398],
+            stroke: '#8DC422',
+            strokeWidth: 5,
+            lineCap: 'round',
+            lineJoin: 'round',
+            tension: 0.7
+        });
+        layer.add(line);
+        layer.add(line2);
+        var father = new Person(330, 30, familyMembers[1].father);
+        var mother = new Person(630, 30, familyMembers[1].mother);
+        var children = new Person(480, 200, familyMembers[1].children);
+        var fater = new Person(150, 200, familyMembers[0].father);
+        var child1 = new Person(250, 400, familyMembers[0].children[1]);
+        var child2 = new Person(500, 400, familyMembers[0].children[0]);
+        console.log(typeof(familyMembers[0].children[1]))
+        stage.add(layer);
+    </script>
+</body>
+</html>    

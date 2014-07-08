@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery homework</title>
+	<style>
+		table, td, th{
+			border: 1px solid #000;
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="wrapper">
+
+	</div>
+
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript">
+		var students = [
+		{
+			firstName: 'Peter',
+			lastName: 'Ivanov',
+			grade: 3
+		}, {
+			firstName: 'Milena',
+			lastName: 'Grigorova',
+			grade: 6
+		}, {
+			firstName: 'Gergana',
+			lastName: 'Borisova',
+			grade: 12
+		}, {
+			firstName: 'Boyko',
+			lastName: 'Petrov',
+			grade: 7
+		}];
+		$('<button>').text('Generate').on('click', generateTable).appendTo('body');
+		function generateTable () {
+			var $table = $('<table>').appendTo('body');
+			var $thead = $('<thead>').appendTo($table);
+			var $th = $('<th>').text('FirstName').appendTo($thead);
+			var $th = $('<th>').text('LastName').appendTo($thead);
+			var $th = $('<th>').text('Grade').appendTo($thead);
+			var $tbody = $('<tbody>').appendTo($table);
+			for(var i in students) {
+				var $tr = $('<tr>');
+				$tr.append($('<td>').text(students[i].firstName));
+				$tr.append($('<td>').text(students[i].lastName));
+				$tr.append($('<td>').text(students[i].grade));
+				$tbody.append($tr);
+			}
+
+		}
+	</script>
+</body>
+</html>

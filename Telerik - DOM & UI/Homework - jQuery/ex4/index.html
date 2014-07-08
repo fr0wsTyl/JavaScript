@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Homework</title>
+</head>
+<body>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript">
+		var $body = $('body');
+		var $input = $('<input>').attr('type', 'color').appendTo($body);
+		$('<button>').text('Change color').appendTo($body).click(function () {
+			$body.css('backgroundColor', $input.val());
+		})
+	</script>
+</body>
+</html>

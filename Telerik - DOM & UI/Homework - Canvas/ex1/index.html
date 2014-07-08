@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Drawing in Canvas</title>
+    <style>
+        #canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="1000" height="600"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        //Creating head
+        //Styles
+        ctx.strokeStyle = '#235762';
+        ctx.fillStyle = '#90CAD7';
+        ctx.lineWidth = 5;
+        //arc head
+        ctx.beginPath();
+        ctx.arc(200, 200, 100, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+        ctx.save();
+        //eye 1
+        ctx.beginPath();
+        ctx.scale(2, 1);
+        ctx.arc(80, 150, 10, 0, 2 * Math.PI)
+        ctx.stroke();
+        ctx.fill();
+        //eye 2
+        ctx.beginPath();
+        ctx.lineWidth = 5;
+        ctx.scale(2, 1);
+        ctx.arc(60, 150, 5, 0, 2 * Math.PI)
+        ctx.stroke();
+        ctx.fill();
+        //nos
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.moveTo(45, 180);
+        ctx.lineTo(45, 210);
+        ctx.lineTo(50, 200)
+        ctx.stroke();
+        ctx.fill();
+
+        //usta
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.scale(1, 2);
+        ctx.arc(50, 120, 6, 0, 2 * Math.PI)
+        ctx.stroke();
+        ctx.fill();
+        //Shapka1
+        ctx.beginPath();
+        ctx.fillStyle = '#396693';
+        ctx.strokeStyle = '#000';
+        ctx.scale(1,0.5);
+        ctx.lineWidth = 1;
+        ctx.arc(50, 100, 20, 0, 2 * Math.PI)
+        ctx.fill();
+        ctx.stroke();
+        //shapka2
+        ctx.fillStyle = '#396693';
+        ctx.strokeStyle = '#000';
+        ctx.beginPath();
+        ctx.moveTo(30, 100);
+        ctx.lineTo(40, 0);
+        ctx.moveTo(70, 100);
+        ctx.lineTo(60,0);
+        ctx.fill();
+        ctx.stroke();
+        //Bike guma1
+        ctx.beginPath();
+        ctx.restore();
+        ctx.arc(400, 500, 50, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+        //Bike guma2
+        ctx.beginPath();
+        ctx.restore();
+        ctx.arc(800, 500, 50, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+        //Bike vilka
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.save();
+        ctx.moveTo(600, 400);
+        ctx.lineTo(400, 500);
+        ctx.lineTo(600, 550);
+        ctx.moveTo(800, 500);
+        ctx.restore();
+        ctx.moveTo(800, 500);
+        ctx.lineTo(600, 400);
+        ctx.restore();
+        ctx.moveTo(800, 500);
+        ctx.lineTo(600, 550);
+        //ctx.lineTo(600, 360);
+        ctx.save();
+        ctx.arc(600, 550, 20, 0, 2 * Math.PI);
+        ctx.moveTo(600, 550);
+        ctx.lineTo(620, 580);
+        ctx.moveTo(600, 550);
+        ctx.lineTo(580, 520);
+        ctx.restore();
+        ctx.moveTo(600,550);
+        ctx.lineTo(600, 360);
+        ctx.moveTo(570, 370);
+        ctx.lineTo(630, 355);
+        ctx.moveTo(800, 500);
+        ctx.lineTo(800, 320);
+        ctx.moveTo(800, 320);
+        ctx.lineTo(740, 350);
+        ctx.moveTo(800, 320);
+        ctx.lineTo(820, 280);
+        ctx.stroke();
+
+        //Кushta
+        ctx.beginPath();
+        ctx.fillStyle = '#975B5B';
+        ctx.strokeStyle = '#000';
+        ctx.moveTo(500, 100);
+        ctx.rect(500, 100, 150, 150);
+        ctx.moveTo(500, 100);
+        ctx.lineTo(580, 40);
+        ctx.moveTo(650, 100);
+        ctx.lineTo(580, 40);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        //Prozorci
+        ctx.beginPath();
+        ctx.fillStyle = '#000';
+        ctx.moveTo(510, 120);
+        ctx.rect(510, 120, 20, 20);
+        ctx.moveTo(540, 120);
+        ctx.rect(540, 120, 20, 20);
+        ctx.moveTo(510, 150);
+        ctx.rect(510, 150, 20, 20);
+        ctx.moveTo(540, 150);
+        ctx.rect(540, 150, 20, 20);
+        ctx.moveTo(590, 120);
+        ctx.rect(590, 120, 20, 20);
+        ctx.moveTo(620, 120);
+        ctx.rect(620, 120, 20, 20);
+        ctx.moveTo(590, 150);
+        ctx.rect(590, 150, 20, 20);
+        ctx.moveTo(620, 150);
+        ctx.rect(620, 150, 20, 20);
+        ctx.fill();
+        ctx.stroke();
+        //Vrata
+        ctx.beginPath();
+        ctx.moveTo(510, 210);
+        ctx.rect(510, 210, 40, 40);
+        ctx.moveTo(510, 230);
+        ctx.lineTo(520, 230);
+        ctx.stroke();
+        
+    </script>
+</body>
+</html>

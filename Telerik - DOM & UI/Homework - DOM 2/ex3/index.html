@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Change background</title>
+</head>
+
+<body>
+    <h1>Choose color:</h1>
+    <input type="color" id="value" />
+    <button id="change">Change background</button>
+    <script type="text/javascript">
+    var display = document.getElementById('change');
+    display.addEventListener('click', function() {
+        var value = document.getElementById('value').value;
+        document.body.style.backgroundColor = value;
+    }, false)
+    </script>
+</body>
+
+</html>

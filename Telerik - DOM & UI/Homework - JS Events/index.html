@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TODO list</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #todo-list {
+            margin: 0 auto;
+            border: 1px solid #000;
+            width: 600px;
+            height: 300px;
+        }
+
+            #todo-list #left {
+                text-align: center;
+                margin: 30px 0 0 10px;
+                float: left;
+            }
+
+            #todo-list #right {
+                margin-left: 250px;
+            }
+    </style>
+</head>
+
+<body>
+    <h1>TODO List</h1>
+    <div id="todo-list">
+        <div id="left">
+            <label for="item-input">
+                New item:</labeled>
+                <br />
+                <input type="text" id="item-input">
+                <br />
+                <button id="add-item">Add item to list</button><br />
+                <button id="show-hide">Show/Hide</button>
+                <button id="remove-items">Remove items</button>
+        </div>
+        <h1>To do:</h1>
+        <div id="right">
+        </div>
+    </div>
+    <script type="text/javascript">
+        var item = document.getElementById('item-input'),
+            addItem = document.getElementById('add-item'),
+            right = document.getElementById('right'),
+            left = document.getElementById('left'),
+            showHideBtn = document.getElementById('show-hide'),
+            removeItems = document.getElementById('remove-items'),
+            olElement = document.createElement('ol');
+        right.appendChild(olElement);
+        function addNewItem() {
+            var li = document.createElement('li');
+            li.innerHTML = item.value;
+            olElement.appendChild(li);
+            if (btnShowHide) {
+                var btnShowHide = document.createElement('button');
+                btnShowHide.innerHTML += 'Hide';
+                left.appendChild(btnShowHide);
+            };
+        }
+        function showHide() {
+            if (right.style.display === 'block') {
+                right.style.display = 'none';
+            }
+            else {
+                right.style.display = 'block';
+            }
+        }
+        function remove() {
+            while (olElement.lastChild) {
+                olElement.removeChild(olElement.lastChild);
+            }
+        }
+        addItem.addEventListener('click', addNewItem);
+        showHideBtn.addEventListener('click', showHide);
+        removeItems.addEventListener('click', remove);
+    </script>
+</body>
+
+</html>

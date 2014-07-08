@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MyConsole</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="js-console">
+        <div id="console-content">
+            <div id="scroll">
+                <p id="copyright">JSConsole [Version 1.0]
+                    <br />(c) 2014 Alex. All rights reserved. [OPEN SOURCE CONSOLE]</p>
+                <p id="condition"></p>
+                <form>
+                    <input type="text" class="code" name="numbers" placeholder="Enter numbers devided by comma" />
+                    <input type="text" class="code" name="position" placeholder="Enter a position" />
+                    <input type="submit" class="check" Value="Run" onClick="func(this.form.numbers.value, this.form.position.value)">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="scripts/js-console.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
+</body>
+
+</html>

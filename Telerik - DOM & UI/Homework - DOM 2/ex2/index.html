@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Value to console</title>
+</head>
+
+<body>
+    <h1>Enter value here:</h1>
+    <input type="text" id="value-to-console" />
+    <button id="display">Display in console..</button>
+    <script type="text/javascript">
+    var display = document.getElementById('display');
+    display.addEventListener('click', function() {
+        var value = document.getElementById('value-to-console').value;
+        console.log(value);
+    }, false)
+    </script>
+</body>
+
+</html>

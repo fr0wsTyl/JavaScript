@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework Handlebars</title>
+	<style>
+		table {
+			width: 600px;
+			height: 500px;
+		}
+	</style>
+</head>
+<body>
+
+	<script id="template" type="text/x-handlebars-templates">
+		<select>
+			{{#option}}
+				<option>{{content}}</option>
+			{{/option}}
+		</select>
+	</script>
+	<script type="text/javascript" src="scripts/handlebars.js"></script>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script>
+		var html = $('#template').html();
+		var template = Handlebars.compile(html);
+		var obj = {
+			option: {
+				content: 'three',
+				content: 'two',
+				content: 'four',
+				content: 'five'
+			}
+		}
+		$(document.body).append(template(obj))
+	</script>
+</body>
+</html>

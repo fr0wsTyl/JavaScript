@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2</title>
+    <style type="text/css">
+    h1 {
+        font-style: italic;
+        font-size: 0.8em;
+    }
+    .div {
+        background: darkgreen;
+        text-align: center;
+        color: white;
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        position: relative;
+    }
+    #first {
+        left: 400px;
+        top: 50px;
+    }
+    #second {
+        left: 220px;
+        top: 100px;
+    }
+    #third {
+        left: 300px;
+        top: 200px;
+    }
+    #fourth {
+        left: 600px;
+        top: 80px;
+    }
+    #fifth {
+        left: 600px;
+        top: -300px;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Write a script that creates 5 div elements and moves them in circular path with interval of 100 milliseconds</h1>
+    <div id="first" class="div">First div</div>
+    <div id="second" class="div">second div</div>
+    <div id="third" class="div">third div</div>
+    <div id="fourth" class="div">fourth div</div>
+    <div id="fifth" class="div">fifth div</div>
+
+    <script type="text/javascript">
+    var first = document.getElementById('first');
+    var second = document.getElementById('second');
+    var third = document.getElementById('third');
+    var fourth = document.getElementById('fourth');
+    var fifth = document.getElementById('fifth');
+
+    setInterval(function moveDivs() {
+        first.style.left += second.style.left;
+        first.style.top += second.style.top;
+        second.style.left += third.style.left;
+        second.style.top += third.style.top;
+        third.style.left += fourth.style.left;
+        third.style.top += fourth.style.top;
+        fourth.style.left += fifth.style.left;
+        fourth.style.top += fifth.style.top;
+        fifth.style.left += first.style.left;
+        fifth.style.top += first.style.top;
+    }, 100)
+    </script>
+</body>
+
+</html>
