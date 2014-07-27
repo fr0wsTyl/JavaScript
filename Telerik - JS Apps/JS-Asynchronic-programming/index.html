@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS async</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function longTimeFunction(fn) {
+		var info = 'hahah stana ve';
+		setTimeout(function () {
+			fn(info);
+		}, 3000);
+	}
+	longTimeFunction(function (result) {
+		console.log(result);
+	});
+	longTimeFunction(function (result) {
+		console.log(result);
+	});
+	longTimeFunction(function (result) {
+		console.log(result);
+	});
+	
+	</script>
+</body>
+</html>

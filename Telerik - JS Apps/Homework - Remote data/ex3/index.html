@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework remote server data</title>
+	<style>
+		.student {
+			border: 1px solid #000;
+			border-radius: 10px;
+			padding: 20px;
+			width: 20%;
+			text-align: center;
+		}
+		h2 {
+			text-align: center;
+		}
+		.error {
+			color: red;
+			text-align: center;
+		}
+		.success-list {
+			color: green;
+		}
+		ul, li {
+			list-style-type: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="student">
+		<h2>Add student</h2>
+		<label for="student-name">Student name</label>
+		<input type="text" id="student-name"><br />
+		<label for="student-grade">Student grade</label>
+		<input type="text" id="student-grade"><br />
+		<button id="add-new-student">Add new student</button>
+		<h3 id="error-add-student" class="error"></h3>
+	</div>
+
+	<div class="student">
+		<h2>List students</h2>
+		<button id="return-all-students">List students</button>
+		<div id="visualize-students" class="error success-list">
+			<ul id="append">
+				
+			</ul>
+		</div>
+		<h3 id="list-students-error" class="error"></h3>
+	</div>
+
+	<div class="student">
+		<h2>Delete student</h2>
+		<label for="student-id">Student ID</label>
+		<input type="text" id="student-id"><br />
+		<button id="delete-student">Delete student</button>
+		<h3 id="error-delete-student" class="error"></h3>
+	</div>
+	
+
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript" src="scripts/script.js"></script>
+</body>
+</html>
