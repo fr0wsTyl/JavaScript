@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crowd share</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <h2>Login</h2>
+        <div id="status"></div>
+        <input type="text" id="login-username" placeholder="Username" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button id="login-submit">Login</button>
+        <h2>Register</h2>
+        <input type="text" id="register-username" placeholder="Username" />
+        <input type="password" id="register-password" placeholder="Password" />
+        <button id="register-submit">Register</button>
+        <h2 id="last-posts">Last posts:</h2>
+        <br />
+        <br />
+        <span>Visual:</span>
+        <input type="text" id="posts-to-visual" placeholder="Number of posts to visual"></input>
+        <button id="visual-pst">Visual</button>
+    </div>
+
+
+    <ul id="posts">
+
+    </ul>
+    <script type="text/javascript" src="scripts/libs/require.js" data-main="scripts/app.js"></script>
+    <!--<script type="text/javascript" src="scripts/libs/jquery.js"></script>
+    <script type="text/javascript" src="scripts/sha1.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>-->
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+div, h1, h2, span, input, button {
+    margin: 0;
+    padding: 0;
+}
+#wrapper, #posts, #last-posts {
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+h1, h2 {
+    text-align: center;
+    padding: 10px;
+    background: #eee;
+    margin-bottom: 10px;
+}
+input, textarea {
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    outline: 0;
+}
+button {
+    margin: 10px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 5px;
+    outline: 0;
+}
+ul {
+    list-style-type: none;
+    word-wrap: break-word;
+}
+#title-visual {
+    /*float: left;*/
+    /*margin-right: 50px;*/
+    color: #555;
+    font-weight: bold;
+}
+#post-visual {
+    margin-left: 10%;
+    /*margin-right: 50px;*/
+    color: #555;
+    font-weight: bold;
+}
+#author-visual {
+	margin-left: 10%;
+    color: red;
+    font-weight: bold;
+}
+#status {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+#post-data {
+	width: 300px;
+}

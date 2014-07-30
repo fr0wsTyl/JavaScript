@@ -1,0 +1,13 @@
+<h2>Hello</h2>
+<button id="logout">LOGOUT</button>
+<div id="data">
+	<div id="status"></div>
+	<input type="text" id="title" placeholder="Title of post">
+    <input type="text" id="post-data" placeholder="Post data here..."></textarea>
+    <button id="add-new-post">Add post</button>
+</div>
+<script>
+if (localStorage.getItem('session') === null) {
+    window.location = '../index.html';
+}
+</script>

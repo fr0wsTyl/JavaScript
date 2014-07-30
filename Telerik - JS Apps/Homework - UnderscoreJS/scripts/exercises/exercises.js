@@ -49,7 +49,6 @@ define(['underscore'], function() {
         maxMarks: findMaxMark,
         animalsSort: filterAnimals,
         totalLegs: totalLegs,
-        mostPopularAuthor: mostPopular,
-        findCommonNames: findCommonNames
+        mostPopularAuthor: mostPopular
     };
 });

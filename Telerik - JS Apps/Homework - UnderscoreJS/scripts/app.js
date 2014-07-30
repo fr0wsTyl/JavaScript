@@ -130,19 +130,19 @@
 
         //Exercise 7 starts here
 
-        var people = exercises.findCommonNames([{
-            fname: 'gosho',
-            lname: 'stefanski'
-        }, {
-            fname: 'deshov',
-            lname: 'pishtov'
-        }, {
-            fname: 'peshov',
-            lname: 'stefanski'
-        }, {
-            fname: 'gosho',
-            lname: 'pishtov'
-        }]);
+        // var people = exercises.findCommonNames([{
+        //     fname: 'gosho',
+        //     lname: 'stefanski'
+        // }, {
+        //     fname: 'deshov',
+        //     lname: 'pishtov'
+        // }, {
+        //     fname: 'peshov',
+        //     lname: 'stefanski'
+        // }, {
+        //     fname: 'gosho',
+        //     lname: 'pishtov'
+        // }]);
 
         //Logs results
         console.log(firstNameBeforeLastName);

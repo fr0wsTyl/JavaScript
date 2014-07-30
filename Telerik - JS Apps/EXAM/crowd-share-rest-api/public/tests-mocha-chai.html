@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mocha karma chai</title>
+	<link rel="stylesheet" href="css/mocha.css">
+</head>
+<body>
+	<div id="mocha"></div>
+	<script type="text/javascript" src="scripts/libs/mocha.js"></script>
+	<script type="text/javascript" src="scripts/libs/chai.js"></script>
+	<script type="text/javascript">
+		mocha.setup('bdd');
+		expect = chai.expect;
+	</script>
+	<script type="text/javascript" src="scripts/app/app-to-test.js"></script>
+	<script type="text/javascript">
+		mocha.run();
+	</script>
+</body>
+</html>
