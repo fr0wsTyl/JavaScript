@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tests</title>
+    <link rel="stylesheet" type="text/css" href="tests/mocha.css">
+</head>
+
+<body>
+    <div id="mocha"></div>
+    <script type="text/javascript" src="tests/mocha.js"></script>
+    <script type="text/javascript" src="tests/chai.js"></script>
+    <script type="text/javascript">
+    mocha.setup('bdd');
+    expect = chai.expect();
+    </script>
+    <script type="text/javascript" src="app/person.js"></script>
+    <script type="text/javascript" src="tests/person.tests.js"></script>
+    <script type="text/javascript">
+    mocha.run();
+    </script>
+</body>
+
+</html>

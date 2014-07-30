@@ -1,0 +1,44 @@
+====Обхождане==== ( Obj, Array )
+    _.each
+Само за обхождане на данни -> _.each(collection, function(value, index, arr) { ..something with data });
+    _.map
+Обхождане и промяна на данни -> _.map(collection, function(value) { return key[0] = 5 });
+
+====Търсене на данни====
+    _.filter
+Търсене по условие -> _.filter(collection, function(value) {return //condition value == 10/2 } );
+    _.reject
+Търсене по условие на което не отговаря -> _.reject(collection, function(value) { return //condition });
+    _.where
+Търсене по определена стойност -> _.where(collection { //object of properties -> name: 'pesho', age: 10 });
+    _.all / _.every
+Проверява дали всички изпълняват дадено условие -> _.all(collection, function(value) { return //condition here.. });
+    _.any / _.some
+Проверява дали поне един елемент отговаря на дадено условие-> _.any(collection, function(value) { return //condition here.. });
+    _.pluck
+Връща колекция от всички, който използват даден ключ -> _.pluck(collection, 'fname');
+
+====Сортитране на данни====
+    _.sortBy
+Сортира колекция по дадено пропърти -> _.sortBy(collection, 'fname');
+    _.groupBy
+Връща ни ключ-стойност колко пъти се среща дадено пропърти -> _.groupBy(collection, 'lname') -> Joro[2] Minkov[3] Alex[1]
+
+====Само за масиви====
+    _.first > само първия / _.initial > всички без последния
+Връща първия елемент в масив -> var arr = _.first(collection, //optional number for more elements first-to-last)
+    _.last / _.rest
+Връща последния елемент в масив -> var arr = _.last(collection, //optional number for more elements last-to-first)
+    _.union / _.intersect
+Правят обединение на два масива -> var finalArray = _.union(firstArr, secondArr...);
+
+====За обекти===
+    _.invert
+Обръща ключ-стойност -> {name: 'alex'} -> {alex: 'name'}
+
+====Chaining====
+    _.chain(collection)
+	_.sortBy('fname')
+	    _.pluck('fname')
+		_.map(function(coll) { element.push(coll.fname) })
+		    _.each(function(info) { console.log(info) };
